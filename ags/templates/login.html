@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Login</title>
+</head>
+<body>
+    <header></header>
+    <div class="container">
+        <form id="form" action="../back_end/login.php" method="post">
+            <h2 class="common" style="text-align: center;">LOGIN</h2>
+            <div class="form-group common">
+                <strong>Email <span>*</span></strong>
+                <input class="form-control" placeholder="Enter email" type="email" id="email" name="email" required>
+                <i class="fas fa-envelope"></i>
+            </div>
+            <div class="form-group common forget-pwd">
+                <strong>Password <span>*</span></strong>
+                <input class="form-control" placeholder="Enter password" type="password" id="password1" name="password1" required>
+                <p class="fas fa-2 fa-eye" onclick="togglePassword('password1', this)"></p>
+                <a href="forget_pwd.html">Forgot Password?</a>
+            </div>
+            <div class="common">
+                <button type="submit" class="btn btn-success">Login</button><br><br>
+                <p>Don't have an account? <a href="{{ url_for('registration') }}">Register</a></p>
+            </div>
+        </form>
+    </div>
+    <footer></footer>
+</body>
+</html>

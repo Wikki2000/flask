@@ -1,0 +1,24 @@
+user-authentication/
+│
+├── app.py                   # Main Flask application file
+│
+├── models/                  # Directory for models
+│   ├── __init__.py          # Initialization file for models package
+│   ├── base_model.py         # Base model class definition
+│   └── storage.py           # Module for data storage (e.g., using SQLite, SQLAlchemy)
+│
+├── templates/               # Directory for HTML templates
+│   ├── login.html           # Login page template
+│   ├── signup.html          # Signup page template
+│   └── dashboard.html       # Dashboard template (example)
+│
+├── static/                  # Directory for static files (CSS, JS, etc.)
+│   ├── style.css            # Example CSS file
+│   └── script.js            # Example JS file
+│
+├── tests/                   # Directory for tests
+│   ├── test_app.py          # Example test file for the Flask application
+│   ├── test_base_model.py   # Example test file for base_model.py
+│   └── test_storage.py      # Example test file for storage.py
+│
+└── requirements.txt         # List of Python dependencies

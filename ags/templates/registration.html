@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/registration.css') }}">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+		<script src="{{ url_for('static', filename='js/registration.js') }}"></script>
+		<title>Registration</title>
+	</head>
+
+	<body>
+		<div class="container">
+			<div id="head">
+				<h2><strong>Sign up</strong></h2>
+				<p>fill in this form to create an account.</p>
+				<!-- Display the response from ajax -->
+				
+				<div id="message-container">
+				</div>
+			</div>
+			<form id="form">
+				<div class="form-group">
+					<label>Name <span>*</span></label>
+					<input class="form-control" id="name" name="name" placeholder="Enter first and last name" required>
+				</div>
+
+				<div class="form-group">
+					<label for="email">Email <span>*</span></label>
+					<input type="email" class="form-control" id="email" name="email" placeholder=" Enter email" required>
+				</div>
+
+				<div class="form-group" id="psw1">
+					<label for="pwd1">Password <span>*</span></label>
+					<input type="password" class="form-control" id="password1" name="password" placeholder="Enter password" required>
+					<span class="pwd-icon">
+						<i class="fas fa-eye" onclick="togglePassword('password1', this)"></i>
+					</span>
+				</div>
+
+				<div class="form-group" id="psw2">
+					<label for="pwd2">Confirm Password <span>*</span></label>
+					<input type="password" class="form-control" id="password2" name="pwd2" placeholder="Confirm Password" required>
+					<div class="pwd-icon">
+						<i class="fas fa-eye" onclick="togglePassword('password2', this)" ></i>
+					</div>
+				</div>
+
+				<div class="grp-btn">
+					<a href="{{ url_for('login') }}" class="btn btn-danger">Cancel</a>
+					<button type="submit" name="submit" class="btn btn-success" onclick="return validatePassword('password1', 'password2');">Sign Up</button>
+				</div>
+
+			</form>
+		</div>
+	</body>
+</html>

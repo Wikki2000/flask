@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta="UTF-8">
+		<title>Register</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+		<!--trap CSS -->
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstra"styles
+	</head>
+		<body>
+			<div class="container">
+				<h2>Register</h2>
+
+				{% with messages = get_flashed_messages() %}
+				{% if messages %}
+				<div>
+					{% for message in messages %}
+					<div class="alert alert-{{ category }}">
+						{{ message }}
+					</div>
+					{% endfor %}
+				</div>
+				{% endif %}
+				{% endwith %}
+
+				<form method="post" action="{{ url_for('registration') }}">
+					<div class="form-group">
+						<label for="name">Name:</label>
+						<input type="text" class="form-control" id="name" name="name" required>
+					</div>
+					<div class="form-group">
+						<label for="email">Email:</label>
+						<input type="email" class="form-control" id="email" name="email" required>
+					</div>
+					<div class="form-group">
+						<label for="password">Password:</label>
+						<input type="password" class="form-control" id="password" name="password" required>
+					</div>
+					<button type="submit" class="btn btn-primary">Register</button>
+					<a href="{{ url_for('login') }}" class="btn btn-secondary mt-2">Login</a>
+				</form>
+			</div>
+
+			<!-- Include Bootstrap JS and dependencies -->
+			<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+		</body>
+</html>

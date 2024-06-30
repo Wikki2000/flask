@@ -1,0 +1,50 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+body .container{
+    border-radius: 10px;
+    background-color: rgb(245, 245, 240);
+    box-shadow: 5px 5px 3px rgb(178, 179, 180);
+    width: 50%;
+    margin-top: 80px;
+}
+.container .form-control{
+    padding: 20px;
+    border: none;
+    border-radius: 5px;
+}
+.container .form-group{
+    position: relative;
+}
+button:hover{
+    opacity: 0.7;
+}
+.container .form-group .fa-envelope, .container .form-group .fa-eye{
+    position: absolute;
+    top: 65%;
+    left: 90%;
+    color: grey;
+}
+span{
+    color: red;
+    font-size: 20px;
+}
+#head{
+    border-bottom: 1px solid grey;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+.container #head p{
+    margin-bottom: 10px;
+    font-size: 15px;
+    text-align: center;
+}
+.container #head h2{
+    text-align: center;
+}
+.container #form .grp-btn{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
